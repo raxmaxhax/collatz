@@ -25,3 +25,11 @@ Collatz conjecture generator that formats the output for Graphviz, written in Ru
 ## Advanced usage
 - Instead of copying the output write it to a file.
 - Instead of going to https://dreampuf.github.io/GraphvizOnline/ run Graphviz locally on the output.
+
+## Q&A
+- How big numbers does this support?
+  - By default, up to the u128 integer limit(340282366920938463463374607431768211455). You'll need a lot of ram to get there. u64 is also fine and you probably won't cross the u32 limit. However, if you want, you can use num_bigint and go up to 3.079 x 10^22212093154093428519. Of course, at this point it is silly.
+- Will there be GPU acceleration?
+  - I am currently working on a GPU accelerated implementation, which could be about 15X faster than the current fastest implementation, so hopefully, yes. If you would like to help me out let me know.
+- Which version should I use?
+  - Depends on your hardware, but most likely, you should use rayon as it is faster even on older hardware. You'll be fine no matter what you use.
